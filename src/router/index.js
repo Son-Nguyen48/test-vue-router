@@ -33,7 +33,7 @@ const router = createRouter({
         {
           path: 'project/:id',
           name: 'app-id-project',
-          component: () => import('../views/TheProject.vue')
+          component: () => import('../views/ProjectDetail.vue')
         },
         {
           path: 'profile',

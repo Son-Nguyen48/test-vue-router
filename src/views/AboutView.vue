@@ -1,15 +1,18 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    {{ count }}
+    <button @click="increment">Increment</button>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import { computed } from 'vue'
+import { useMenuStore } from '../stores/menu'
+const menuStore = useMenuStore()
+const count = computed(() => {
+  return menuStore.count
+})
+
+const increment = menuStore.increment
+</script>
